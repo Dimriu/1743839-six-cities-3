@@ -3,11 +3,16 @@ import {Header} from '../../components/main-page-component/header';
 import CitiesPlaces from '../../components/main-page-component/cities-places';
 import Map from '../../components/main-page-component/map';
 
+
 type NumberOfProposals = {
   offersCount: number;
 }
 
+
 function MainPage ({offersCount}: NumberOfProposals): JSX.Element {
+
+
+
   return (
     <div className = "page page--gray page--main">
       <Header />
@@ -22,7 +27,9 @@ function MainPage ({offersCount}: NumberOfProposals): JSX.Element {
               <CitiesPlaces offersCount={offersCount}/>
             </section>
             <div className="cities__right-section">
-              <Map />
+              <Map
+                city='Amsterdam'
+              />
             </div>
           </div>
         </div>

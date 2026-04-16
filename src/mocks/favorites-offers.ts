@@ -91,7 +91,7 @@ const favoritesOffers = [
 
   {
     'id': '1',
-    'title': 'Заголовок_1',
+    'title': 'Париж_1',
     'type': 'apartment',
     'price': 1,
     'city': {
@@ -113,7 +113,7 @@ const favoritesOffers = [
     'previewImage': 'img/paris_0.jpg'
   }, {
     'id': '2',
-    'title': 'Заголовок_2',
+    'title': 'Париж_2',
     'type': 'apartment',
     'price': 2,
     'city': {

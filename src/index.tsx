@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 import { offersCount } from './components/const';
-//import { temps } from './components/const';
 import listOffer from './mocks/offers';
 
 

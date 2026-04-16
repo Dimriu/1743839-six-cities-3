@@ -4,7 +4,7 @@ const statusAutorization = 'AUTH';
 const citiesData = [{
   id:1,
   city:'Paris',
-  active: false
+  active: true
 }, {
   id:2,
   city:'Cologne',
@@ -16,7 +16,7 @@ const citiesData = [{
 }, {
   id:4,
   city:'Amsterdam',
-  active: true
+  active: false
 }, {
   id:5,
   city:'Hamburg',
