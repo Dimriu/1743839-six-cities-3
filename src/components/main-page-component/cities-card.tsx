@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 import { useState } from 'react';
+import React from 'react'
 
 function Premium () {
   return (
@@ -39,18 +40,8 @@ function Card({...props}: CardProps): JSX.Element {
   ${props.isFavorite ? 'place-card__bookmark-button--active' : ''}
   `;
 
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
-
   return (
-    <article onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className={!isHovering ? 'cities__card place-card' : 'cities__card place-card--active'}>
+    <article  className='cities__card place-card'>
       {props.isPremium ? <Premium /> : ''}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
@@ -81,7 +72,7 @@ function Card({...props}: CardProps): JSX.Element {
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
-        <h2 className="place-card__name">
+        <h2 className="place-card__name" onMouseEnter ={props.onMouseEnter}>
           <Link to={`offer/${props.id}`}>
             {props.title}
           </Link>
@@ -96,7 +87,12 @@ type Cart<T = CardProps> = {
   temps: T[];
 }
 
-function CitiesCard ({temps}: Cart<CardProps> = {temps: []}): JSX.Element {
+function CitiesCard ({temps, onListItemHover}) {
+  const handleListItemHover = (evt) => {
+    onListItemHover(evt.target.textContent);
+    console.log(evt.target.textContent);
+  };
+
   const cards = temps.map((item) => (
     <Card
       key = {item.id}
@@ -111,6 +107,7 @@ function CitiesCard ({temps}: Cart<CardProps> = {temps: []}): JSX.Element {
       isPremium = {item.isPremium}
       rating = {item.rating}
       isFavorite = {item.isFavorite}
+      onMouseEnter={handleListItemHover}
     />
   ));
   return (

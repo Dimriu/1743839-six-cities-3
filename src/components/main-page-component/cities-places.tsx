@@ -37,25 +37,11 @@ type NumberOfProposals = {
 
 function CitiesPlaces ({offersCount}: NumberOfProposals): JSX.Element {
 
-  const handleMouseOver = () => {
-    //console.log('Mouse detected!');
-  };
-
-/*
-  let as = [];
-  for (let i=0; i<listOffer.length; i++) {
-    if(listOffer[i].city.name === count) {
-      as.push(listOffer[i]);
-    }
-  }
-*/
-
 
   return (
     <>
       <h2 className="visually-hidden">Places</h2>
       <b className="places__found"
-        onMouseOver={handleMouseOver}
       >{offersCount} places to stay in 'Куку'
       </b>
       <form className="places__sorting" action="#" method="get">
@@ -73,4 +59,4 @@ function CitiesPlaces ({offersCount}: NumberOfProposals): JSX.Element {
   );
 }
 
-export default CitiesPlaces;
+//export default CitiesPlaces;
